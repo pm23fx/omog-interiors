@@ -8,6 +8,46 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// Mobile Menu Toggle Function
+function toggleMenu() {
+    const navMenu = document.getElementById('navMenu');
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    navMenu.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+}
+
+// Close menu when clicking outside
+document.addEventListener('click', function(event) {
+    const nav = document.querySelector('nav');
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    
+    if (nav && !nav.contains(event.target)) {
+        const navMenu = document.getElementById('navMenu');
+        if (navMenu) {
+            navMenu.classList.remove('active');
+        }
+        if (menuToggle) {
+            menuToggle.classList.remove('active');
+        }
+    }
+});
+
+// Close menu when clicking a link
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('nav ul li a').forEach(link => {
+        link.addEventListener('click', function() {
+            const navMenu = document.getElementById('navMenu');
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            if (navMenu) {
+                navMenu.classList.remove('active');
+            }
+            if (menuToggle) {
+                menuToggle.classList.remove('active');
+            }
+        });
+    });
+});
+
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

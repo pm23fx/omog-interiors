@@ -100,7 +100,11 @@
 <p>And Trading • Qatar</p>
 </div>
 </div>
-<ul>
+<button class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+<span class="hamburger-icon">☰</span>
+<span class="close-icon">✕</span>
+</button>
+<ul id="navMenu">
 <li><a href="index.html" class="active">Home</a></li>
 <li><a href="about.html">About Us</a></li>
 <li><a href="services.html">Services</a></li>
@@ -249,7 +253,7 @@
 </div>
 <div class="footer-section">
 <h3>Contact Info</h3>
-<p>📧 <a href="mailto:info@omoginteriors.com" style="color:white; text-decoration:none;">info@omoginteriors.com</a></p>
+<p>📧 <a href="/cdn-cgi/l/email-protection#31585f575e715e5c5e56585f455443585e43421f525e5c" style="color:white; text-decoration:none;"><span class="__cf_email__" data-cfemail="264f48404966494b49414f485243544f4954550845494b">[email&#160;protected]</span></a></p>
 <p>📱 <a href="tel:+97471021381" style="color:white; text-decoration:none;">+974 7102 1381</a></p>
 <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=Office+70+2nd+Floor+Block+F+Al+Mirqab+Al+Jadeed+St+Doha+Qatar" target="_blank" style="color:white; text-decoration:none;">Office 70, 2nd Floor Block F, Al Mirqab Al Jadeed St, Doha, Qatar</a></p>
 </div>
@@ -266,7 +270,7 @@
     </a>
     <a href="https://www.instagram.com/omogbackup?igsh=d3djYTNzZ3R1bGNh" class="floating-instagram" target="_blank">📷</a>
 
-<script type="text/javascript">
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
     pageLanguage: 'en',
@@ -327,17 +331,12 @@ update();
 const observer = new IntersectionObserver(
   (entries, observer) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
+      if (entry.isIntersecting && !entry.target.classList.contains('counter-done')) {
         animateCounter(entry.target);
         observer.unobserve(entry.target);
       }
     });
   }
 );
-stats.forEach(stat => {
-  observer.observe(stat);
+stats.forEach(stat => observer.observe(stat));
 });
-});
-</script>
-</body>
-</html>

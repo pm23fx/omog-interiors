@@ -81,7 +81,11 @@
                     <p>And Trading • Qatar</p>
                 </div>
             </div>
-            <ul>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+                <span class="hamburger-icon">☰</span>
+                <span class="close-icon">✕</span>
+            </button>
+            <ul id="navMenu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html">Services</a></li>
@@ -188,7 +192,7 @@
             </div>
             <div class="footer-section">
 <h3>Contact Info</h3>
-<p>📧 <a href="mailto:info@omoginteriors.com" style="color:white; text-decoration:none;">info@omoginteriors.com</a></p>
+<p>📧 <a href="/cdn-cgi/l/email-protection#2b42454d446b4446444c42455f4e594244595805484446" style="color:white; text-decoration:none;"><span class="__cf_email__" data-cfemail="51383f373e113e3c3e36383f253423383e23227f323e3c">[email&#160;protected]</span></a></p>
 <p>📱 <a href="tel:+97471021381" style="color:white; text-decoration:none;">+974 7102 1381</a></p>
 <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=Office+70+2nd+Floor+Block+F+Al+Mirqab+Al+Jadeed+St+Doha+Qatar" target="_blank" style="color:white; text-decoration:none;">Office 70, 2nd Floor Block F, Al Mirqab Al Jadeed St, Doha, Qatar</a></p>
 </div>
@@ -210,7 +214,7 @@
             <p id="lightbox-description"></p>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
     <script>
         // Animations and Lightbox Scripting
         document.addEventListener("DOMContentLoaded", () => {
@@ -241,7 +245,3 @@
             document.getElementById('lightbox-description').innerText = el.querySelector('p').innerText;
             lb.style.display = 'flex';
         }
-        function closeLightbox() { document.getElementById('lightbox').style.display = 'none'; }
-    </script>
-</body>
-</html>
