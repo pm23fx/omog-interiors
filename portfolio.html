@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Portfolio | OMO G Interior Decoration</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* --- Fixed Instagram Floating Button --- */
+        .floating-ig-btn {
+            position: fixed;
+            top: 130px;
+            right: 20px;
+            z-index: 10001;
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            overflow: hidden;
+            padding: 0;
+        }
+        .floating-ig-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+            min-width: 24px;
+            margin-left: 13px; /* Centers icon perfectly in the 50px circle */
+            transition: all 0.4s ease;
+        }
+        .ig-text {
+            color: white;
+            opacity: 0;
+            white-space: nowrap;
+            font-family: sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.4s ease;
+            margin-left: 10px;
+            visibility: hidden;
+        }
+        .floating-ig-btn:hover {
+            width: 210px;
+        }
+        .floating-ig-btn:hover svg {
+            margin-left: 15px;
+        }
+        .floating-ig-btn:hover .ig-text {
+            opacity: 1;
+            visibility: visible;
+        }
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 20000;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <img src="logo.png" alt="OMO G Logo" style="width: 100px; height: 100px; object-fit: contain;">
+                </div>
+                <div class="logo-text">
+                    <h1>OMO G INTERIOR DECORATION</h1>
+                    <p>And Trading • Qatar</p>
+                </div>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="renovations.html">Renovations</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="booking.html" class="cta-nav">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Floating Instagram Button with FIXED icon -->
+    <a href="https://www.instagram.com/omogbackup?igsh=d3djYTNzZ3R1bGNh" target="_blank" class="floating-ig-btn">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.5 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+<span class="ig-text">Follow us on Instagram</span>
+</a>
+
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1>Our Portfolio</h1>
+            <p>Showcasing Excellence in Interior Design Across Qatar</p>
+        </div>
+    </section>
+    <section>
+        <div class="section-header">
+            <h2>Our Recent Projects</h2>
+            <p>Explore our collection of beautifully designed spaces</p>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800" alt="Living Room"><div class="portfolio-overlay"><h3>Luxury Living Room</h3><p>Sophisticated neutral palette</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="bedroom.jpg" alt="Bedroom"><div class="portfolio-overlay"><h3>Plush Bedroom</h3><p>Cozy and elegant design</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1615529328331-f8917597711f?w=800" alt="Contemporary Suite"><div class="portfolio-overlay"><h3>Contemporary Bedroom Suite</h3><p>Bespoke furnishings</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="livingroom.jpg" alt="Plush Livingroom"><div class="portfolio-overlay"><h3>Plush Livingroom Interior</h3><p>Rich textures and elegant furnishings</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=800" alt="Gourmet Kitchen"><div class="portfolio-overlay"><h3>Modern Gourmet Kitchen</h3><p>Marble countertops</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="dining.jpg" alt="Dining Interior"><div class="portfolio-overlay"><h3>Exquisite Dining Interior</h3><p>Luxurious finishes</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=800" alt="Minimalist Space"><div class="portfolio-overlay"><h3>Minimalist Living Space</h3><p>Clean lines and curated furnishings</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="master.jpg" alt="Master Retreat"><div class="portfolio-overlay"><h3>Master Bedroom Retreat</h3><p>Serene sanctuary</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?w=800" alt="Elegant Dining"><div class="portfolio-overlay"><h3>Elegant Dining Room</h3><p>Designer furniture</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800" alt="Home Office"><div class="portfolio-overlay"><h3>Executive Home Office</h3><p>Professional workspace</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=800" alt="Spa Bathroom"><div class="portfolio-overlay"><h3>Luxury Spa Bathroom</h3><p>Marble and mood lighting</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800" alt="Modern Lounge"><div class="portfolio-overlay"><h3>Modern Lounge Area</h3><p>Comfortable seating</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800" alt="Penthouse"><div class="portfolio-overlay"><h3>Penthouse Interior</h3><p>High-rise luxury</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800" alt="Kitchen Island"><div class="portfolio-overlay"><h3>Contemporary Kitchen Island</h3><p>Modern and integrated</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800" alt="Wardrobe"><div class="portfolio-overlay"><h3>Luxury Walk-in Wardrobe</h3><p>Custom closet system</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800" alt="Fine Dining"><div class="portfolio-overlay"><h3>Fine Dining Space</h3><p>Upscale environment</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800" alt="Hotel Bedroom"><div class="portfolio-overlay"><h3>Boutique Hotel Style Bedroom</h3><p>Plush textiles</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=800" alt="Open Plan"><div class="portfolio-overlay"><h3>Open Plan Living</h3><p>Seamless transitions</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800" alt="Master Suite"><div class="portfolio-overlay"><h3>Master Suite Retreat</h3><p>Luxurious sanctuary</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1600210491369-e753d80a41f3?w=800" alt="Designer Living"><div class="portfolio-overlay"><h3>Designer Living Room</h3><p>Curated art pieces</p></div></div>
+            <div class="portfolio-item instagram-item" onclick="window.open('https://www.instagram.com/p/DMKUG0toxku/', '_blank')"><img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800" alt="IG 1"><div class="portfolio-overlay"><h3>Featured IG Project 1</h3><p>Click to view on Instagram</p><span>📷</span></div></div>
+            <div class="portfolio-item instagram-item" onclick="window.open('https://www.instagram.com/p/DLhiuEAo3qm/', '_blank')"><img src="https://images.unsplash.com/photo-1615529328331-f8917597711f?w=800" alt="IG 2"><div class="portfolio-overlay"><h3>Featured IG Project 2</h3><p>Click to view on Instagram</p><span>📷</span></div></div>
+            <div class="portfolio-item instagram-item" onclick="window.open('https://www.instagram.com/p/DLZ62ewo2vx/', '_blank')"><img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=800" alt="IG 3"><div class="portfolio-overlay"><h3>Featured IG Project 3</h3><p>Click to view on Instagram</p><span>📷</span></div></div>
+            <div class="portfolio-item instagram-item" onclick="window.open('https://www.instagram.com/p/DLRsexRo50W/', '_blank')"><img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800" alt="IG 4"><div class="portfolio-overlay"><h3>Featured IG Project 4</h3><p>Click to view on Instagram</p><span>📷</span></div></div>
+            <div class="portfolio-item instagram-item" onclick="window.open('https://www.instagram.com/p/DLDCh-Zo7P_/', '_blank')"><img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=800" alt="IG 5"><div class="portfolio-overlay"><h3>Featured IG Project 5</h3><p>Click to view on Instagram</p><span>📷</span></div></div>
+        </div>
+    </section>
+    <section style="background: var(--light-bg); padding: 4rem 0;">
+        <div class="section-header"><h2>Our Impact</h2><p>Numbers that speak to our dedication</p></div>
+        <div class="stats-container" style="display:flex; justify-content:space-around; text-align:center;">
+            <div class="stat-item"><h2 style="color: var(--primary-color);">86+</h2><p>Projects Completed</p></div>
+            <div class="stat-item"><h2 style="color: var(--primary-color);">84+</h2><p>Happy Clients</p></div>
+            <div class="stat-item"><h2 style="color: var(--primary-color);">5+</h2><p>Years Experience</p></div>
+            <div class="stat-item"><h2 style="color: var(--primary-color);">100%</h2><p>Satisfaction Rate</p></div>
+        </div>
+    </section>
+    <section>
+        <div class="section-header"><h2>Project Categories</h2><p>Our areas of expertise</p></div>
+        <div class="project-categories" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:2rem; padding: 20px;">
+            <div class="category-card" style="text-align:center; padding:20px; background:#f9f9f9; border-radius:10px;"><div style="font-size:3rem;">🏠</div><h3>Residential</h3><p>Bespoke home interiors</p></div>
+            <div class="category-card" style="text-align:center; padding:20px; background:#f9f9f9; border-radius:10px;"><div style="font-size:3rem;">🏢</div><h3>Commercial</h3><p>Inspiring workspaces</p></div>
+            <div class="category-card" style="text-align:center; padding:20px; background:#f9f9f9; border-radius:10px;"><div style="font-size:3rem;">🍽️</div><h3>Hospitality</h3><p>Hotels and Dining</p></div>
+            <div class="category-card" style="text-align:center; padding:20px; background:#f9f9f9; border-radius:10px;"><div style="font-size:3rem;">🎨</div><h3>Custom</h3><p>Unique design visions</p></div>
+        </div>
+    </section>
+    <section style="background: var(--light-bg); padding: 4rem 0;">
+        <div class="section-header"><h2>What Our Clients Say</h2></div>
+        <div class="testimonials-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:2rem; padding: 20px;">
+            <div class="testimonial-card" style="background:white; padding:20px; border-radius:10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <p>"OMO G transformed our home into a masterpiece! The attention to detail exceeded our expectations."</p>
+                <p><strong>- Sarah M., Doha</strong></p>
+            </div>
+            <div class="testimonial-card" style="background:white; padding:20px; border-radius:10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <p>"Professional, efficient, and stunning results. Our office is now the envy of our clients."</p>
+                <p><strong>- Ahmed K., Qatar</strong></p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>OMO G Interior Decoration</h3>
+                <p>Transforming spaces across Qatar with exceptional design and craftsmanship.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="renovations.html">Renovations</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+<h3>Contact Info</h3>
+<p>📧 <a href="mailto:info@omoginteriors.com" style="color:white; text-decoration:none;">info@omoginteriors.com</a></p>
+<p>📱 <a href="tel:+97471021381" style="color:white; text-decoration:none;">+974 7102 1381</a></p>
+<p>📍 <a href="https://www.google.com/maps/search/?api=1&query=Office+70+2nd+Floor+Block+F+Al+Mirqab+Al+Jadeed+St+Doha+Qatar" target="_blank" style="color:white; text-decoration:none;">Office 70, 2nd Floor Block F, Al Mirqab Al Jadeed St, Doha, Qatar</a></p>
+</div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <a href="https://www.instagram.com/omogbackup?igsh=d3djYTNzZ3R1bGNh" target="_blank" style="color:white; text-decoration:none; margin-right:10px;">Instagram</a>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 OMO G Trading And Interior Decoration<br>CR No: 235664 • Doha, Qatar</p></div>
+    </footer>
+    <a href="https://wa.me/97471021381" class="floating-whatsapp" target="_blank">
+        <svg viewBox="0 0 448 512" style="width: 28px; height: 28px; fill: white;"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+    </a>
+    <div id="lightbox" class="lightbox">
+        <span onclick="closeLightbox()" style="position:absolute; top:20px; right:30px; color:white; font-size:40px; cursor:pointer;">×</span>
+        <img id="lightbox-img" style="max-width:80%; max-height:70%; border:2px solid white;">
+        <div style="color:white; text-align:center; margin-top:15px;">
+            <h3 id="lightbox-title"></h3>
+            <p id="lightbox-description"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // Animations and Lightbox Scripting
+        document.addEventListener("DOMContentLoaded", () => {
+            const stats = document.querySelectorAll(".stat-item h2");
+            const obs = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const h2 = entry.target;
+                        const target = parseInt(h2.innerText.replace(/\D/g,''));
+                        let count = 0;
+                        const timer = setInterval(() => {
+                            count += Math.ceil(target/20);
+                            if(count >= target) {
+                                h2.innerText = target + (h2.innerText.includes('+') ? '+' : (h2.innerText.includes('%') ? '%' : ''));
+                                clearInterval(timer);
+                            } else { h2.innerText = count; }
+                        }, 50);
+                    }
+                });
+            });
+            stats.forEach(s => obs.observe(s));
+        });
+        function openLightbox(el) {
+            if (el.classList.contains('instagram-item')) return;
+            const lb = document.getElementById('lightbox');
+            document.getElementById('lightbox-img').src = el.querySelector('img').src;
+            document.getElementById('lightbox-title').innerText = el.querySelector('h3').innerText;
+            document.getElementById('lightbox-description').innerText = el.querySelector('p').innerText;
+            lb.style.display = 'flex';
+        }
+        function closeLightbox() { document.getElementById('lightbox').style.display = 'none'; }
+    </script>
+</body>
+</html>
