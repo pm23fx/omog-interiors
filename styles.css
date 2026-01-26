@@ -3455,7 +3455,7 @@ footer {
     /* Mobile navigation items */
     nav ul li {
         width: 100%;
-        text-align: center;
+        text-align: right;
         border-bottom: none;
     }
     
