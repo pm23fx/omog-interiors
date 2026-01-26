@@ -3408,7 +3408,7 @@ footer {
     z-index: 1001;
     position: relative;
     font-weight: bold;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.6);
 }
 
 .mobile-menu-toggle .close-icon {
@@ -3438,12 +3438,10 @@ footer {
         top: 100%;
         left: 0;
         right: 0;
-        background: rgba(0, 0, 0, 0) !important;
-        backdrop-filter: blur(15px) !important;
-        -webkit-backdrop-filter: blur(15px) !important;
+        background: none !important;
         padding: 20px;
         gap: 0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        box-shadow: none;
         z-index: 1000;
         max-height: calc(100vh - 100px);
         overflow-y: auto;
@@ -3458,7 +3456,7 @@ footer {
     nav ul li {
         width: 100%;
         text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: none;
     }
     
     nav ul li:last-child {
@@ -3470,10 +3468,15 @@ footer {
         padding: 15px 20px;
         width: 100%;
         transition: all 0.3s ease;
+        background: rgba(139, 21, 56, 0.9);
+        margin-bottom: 5px;
+        border-radius: 8px;
+        color: white !important;
+        font-weight: 600;
     }
     
     nav ul li a:hover {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(201, 160, 99, 0.95);
         transform: none;
     }
     
