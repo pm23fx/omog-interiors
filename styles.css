@@ -3401,12 +3401,14 @@ footer {
     display: none;
     background: none;
     border: none;
-    color: #800020;
+    color: #FFFFFF;
     font-size: 2em;
     cursor: pointer;
     padding: 10px;
     z-index: 1001;
     position: relative;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.6);
 }
 
 .mobile-menu-toggle .close-icon {
