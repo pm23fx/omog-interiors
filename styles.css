@@ -3468,10 +3468,10 @@ footer {
         padding: 15px 20px;
         width: 100%;
         transition: all 0.3s ease;
-        background: none(0, 0, 0, 0);
+        background: none !important;
         margin-bottom: 5px;
         border-radius: 8px;
-        color: white !important;
+        color: black !important;
         font-weight: 600;
     }
     
