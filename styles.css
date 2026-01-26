@@ -3468,7 +3468,7 @@ footer {
         padding: 15px 20px;
         width: 100%;
         transition: all 0.3s ease;
-        background: rgba(139, 21, 56, 0.9);
+        background: none(0, 0, 0, 0);
         margin-bottom: 5px;
         border-radius: 8px;
         color: white !important;
@@ -3476,7 +3476,7 @@ footer {
     }
     
     nav ul li a:hover {
-        background: rgba(201, 160, 99, 0.95);
+        background: none(0, 0, 0, 0);
         transform: none;
     }
     
