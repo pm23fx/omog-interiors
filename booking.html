@@ -78,7 +78,7 @@
 <body>
     <header id="header">
         <nav>
-            <div class="logo-container">
+            <a href="index.html" class="logo-container" style="text-decoration: none; color: inherit;">
                 <div class="logo-icon">
                     <img src="logo.png" alt="OMO G Logo" style="width: 100px; height: 100px; object-fit: contain;">
                 </div>
@@ -87,11 +87,7 @@
                     <p>And Trading • Qatar</p>
                 </div>
             </div>
-            <button class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
-                <span class="hamburger-icon">☰</span>
-                <span class="close-icon">✕</span>
-            </button>
-            <ul id="navMenu">
+            <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html">Services</a></li>
@@ -103,253 +99,19 @@
         </nav>
     </header>
     <!-- Instagram Button -->
-    <a href="https://www.instagram.com/omogbackup?igsh=d3djYTNzZ3R1bGNh" target="_blank" class="floating-ig-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.5 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
-        <span class="ig-text">Follow us on Instagram</span>
-    </a>
-
-    <section class="page-header">
-        <div class="page-header-content">
-            <h1>Book Your Consultation</h1>
-            <p>Take the First Step Toward Your Dream Space</p>
-        </div>
-    </section>
-
-    <section>
-        <div class="section-header">
-            <h2>Let's Get Started</h2>
-            <p>Choose your preferred booking method and we'll connect with you shortly</p>
-        </div>
-        <div class="booking-intro">
-            <p>Booking a consultation with OMO G is the first step toward transforming your space. Whether you're planning a complete home renovation, designing a new office, or simply refreshing a room, our expert team is here to bring your vision to life.</p>
-            <p>During your consultation, we'll discuss your goals, preferences, budget, and timeline to create a customized plan that perfectly suits your needs.</p>
-        </div>
-    </section>
-
-    <section class="booking-section">
-        <div class="section-header">
-            <h2>Choose Your Booking Method</h2>
-            <p>Select the option that works best for you</p>
-        </div>
-        <div class="booking-options">
-            <div class="booking-card">
-                <div class="booking-icon">💬</div>
-                <h3>WhatsApp Booking</h3>
-                <p>Get quick and instant response through WhatsApp. Perfect for urgent inquiries and immediate scheduling.</p>
-                <ul class="booking-benefits">
-                    <li>✓ Instant messaging</li>
-                    <li>✓ Quick response time</li>
-                    <li>✓ Share photos easily</li>
-                    <li>✓ Direct communication</li>
-                </ul>
-                <button class="booking-btn" onclick="window.open('https://wa.me/97471021381?text=Hello!%20I%20would%20like%20to%20book%20a%20consultation%20for%20interior%20design.', '_blank')">Book via WhatsApp</button>
-            </div>
-            <div class="booking-card">
-                <div class="booking-icon">📋</div>
-                <h3>Google Form</h3>
-                <p>Fill out our detailed consultation request form. Ideal for providing comprehensive project information.</p>
-                <ul class="booking-benefits">
-                    <li>✓ Detailed information</li>
-                    <li>✓ Structured approach</li>
-                    <li>✓ Attach references</li>
-                    <li>✓ Better planning</li>
-                </ul>
-                <button class="booking-btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfOLR0Ugvq1tMgOA32Xt6oP_wyBAAyU6GYSh2anaro0rvuUJw/viewform', '_blank')">Book via Google Form</button>
-            </div>
-        </div>
-    </section>
-
-    <section style="background: var(--light-bg);">
-        <div class="section-header">
-            <h2>What to Expect</h2>
-            <p>Your consultation journey with OMO G</p>
-        </div>
-        <div class="consultation-process">
-            <div class="consultation-step">
-                <div class="consultation-number">1</div>
-                <h3>Book Your Slot</h3>
-                <p>Choose your preferred booking method and provide initial project details</p>
-            </div>
-            <div class="consultation-step">
-                <div class="consultation-number">2</div>
-                <h3>Confirmation</h3>
-                <p>Receive confirmation with date, time, and what to prepare for the consultation</p>
-            </div>
-            <div class="consultation-step">
-                <div class="consultation-number">3</div>
-                <h3>Initial Meeting</h3>
-                <p>Meet with our design team to discuss your vision, budget, and timeline</p>
-            </div>
-            <div class="consultation-step">
-                <div class="consultation-number">4</div>
-                <h3>Site Visit</h3>
-                <p>If needed, we'll visit your location to assess the space and take measurements</p>
-            </div>
-            <div class="consultation-step">
-                <div class="consultation-number">5</div>
-                <h3>Proposal</h3>
-                <p>Receive a detailed proposal with design concepts, timeline, and pricing</p>
-            </div>
-            <div class="consultation-step">
-                <div class="consultation-number">6</div>
-                <h3>Project Launch</h3>
-                <p>Upon approval, we begin bringing your dream space to life</p>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="section-header">
-            <h2>Consultation Services</h2>
-            <p>We offer various consultation options to suit your needs</p>
-        </div>
-        <div class="consultation-types">
-            <div class="consultation-type-card">
-                <div class="consultation-icon">🏠</div>
-                <h3>Free Initial Consultation</h3>
-                <p><strong>Duration:</strong> 30-45 minutes</p>
-                <p>Perfect for getting acquainted with our services and discussing your basic project requirements.</p>
-                <div class="consultation-includes">
-                    <p><strong>Includes:</strong></p>
-                    <ul>
-                        <li>Project discussion</li>
-                        <li>Preliminary ideas</li>
-                        <li>Budget overview</li>
-                        <li>Timeline estimation</li>
-                    </ul>
                 </div>
-            </div>
-            <div class="consultation-type-card">
-                <div class="consultation-icon">📐</div>
-                <h3>On-Site Consultation</h3>
-                <p><strong>Duration:</strong> 1-2 hours</p>
-                <p>Our team visits your location to assess the space and take measurements.</p>
-                <div class="consultation-includes">
-                    <p><strong>Includes:</strong></p>
-                    <ul>
-                        <li>Site inspection</li>
-                        <li>Measurements</li>
-                        <li>Space assessment</li>
-                        <li>Detailed recommendations</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="consultation-type-card">
-                <div class="consultation-icon">🎨</div>
-                <h3>Detailed Design Consultation</h3>
-                <p><strong>Duration:</strong> 2-3 hours</p>
-                <p>Comprehensive session to dive deep into preferences and create mood boards.</p>
-                <div class="consultation-includes">
-                    <p><strong>Includes:</strong></p>
-                    <ul>
-                        <li>Style analysis</li>
-                        <li>Mood boards</li>
-                        <li>Material selection</li>
-                        <li>Complete design plan</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section style="background: var(--light-bg);">
-        <div class="section-header">
-            <h2>How to Prepare</h2>
-            <p>Make the most of your consultation with these tips</p>
-        </div>
-        <div class="preparation-grid">
-            <div class="preparation-card"><h3>📸 Gather Inspiration</h3><p>Collect photos of designs you love.</p></div>
-            <div class="preparation-card"><h3>📝 List Your Needs</h3><p>Write down functional requirements.</p></div>
-            <div class="preparation-card"><h3>💰 Set Your Budget</h3><p>Have a budget range in mind.</p></div>
-            <div class="preparation-card"><h3>📅 Consider Timeline</h3><p>Think about when you'd like to finish.</p></div>
-            <div class="preparation-card"><h3>🏠 Measure Your Space</h3><p>Have basic room measurements ready.</p></div>
-            <div class="preparation-card"><h3>❓ Prepare Questions</h3><p>Write down any concerns you have.</p></div>
-        </div>
-    </section>
-
-    <section>
-        <div class="section-header">
-            <h2>Other Ways to Reach Us</h2>
-            <p>Prefer a different contact method? We're here for you</p>
-        </div>
-        <div class="alternative-contact">
-            <div class="alt-contact-card">
-                <div class="alt-contact-icon">📧</div>
-                <h3>Email</h3>
-                <p>Send us detailed info about your project</p>
-                <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3f5d5050545651584c7f5052505856514b5a4d56504d4c115c5052">[email&#160;protected]</a>
-            </div>
-            <div class="alt-contact-card">
-                <div class="alt-contact-icon">📱</div>
-                <h3>Phone</h3>
-                <p>Call us during business hours</p>
-                <a href="tel:+97471021381">+974 7102 1381</a>
-            </div>
-            <div class="alt-contact-card">
-                <div class="alt-contact-icon">📍</div>
-                <h3>Visit Our Office</h3>
-                
-                <div class="map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.414777551062!2d51.5033722!3d25.2734794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45db096979313d%3A0x6b8642784f938f32!2sAl%20Mirqab%20Al%20Jadeed%20St%2C%20Doha!5e0!3m2!1sen!2sqa!4v1700000000000!5m2!1sen!2sqa" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-
-                <p>Drop by our office in Doha</p>
-                <a href="https://maps.google.com/?q=Office+70,+2nd+Floor+Block+F,+Al+Mirqab+Al+Jadeed+St,+Doha" target="_blank" style="font-weight: bold; text-decoration: underline; color: #d4af37;">
-                    Office 70, 2nd Floor Block F,<br>
-                    Al Mirqab Al Jadeed St, Doha
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2>Don't Wait to Create Your Dream Space</h2>
-            <p>Book your consultation today</p>
-            <div class="cta-buttons">
-                <button class="btn-primary" onclick="window.open('https://wa.me/97471021381?text=Hello!', '_blank')" style="margin-right: 1rem;">WhatsApp Booking</button>
-                <button class="btn-primary" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfOLR0Ugvq1tMgOA32Xt6oP_wyBAAyU6GYSh2anaro0rvuUJw/viewform', '_blank')">Google Form Booking</button>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>OMO G Interior Decoration</h3>
-                <p>Transforming spaces across Qatar with exceptional design and craftsmanship.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="renovations.html">Renovations</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-<h3>Contact Info</h3>
-<p>📧 <a href="/cdn-cgi/l/email-protection#35575a5a5e5c5b5246755a585a525c5b4150475c5a47461b565a58" style="color:white; text-decoration:none;"><span class="__cf_email__" data-cfemail="8defe2e2e6e4e3eafecde2e0e2eae4e3f9e8ffe4e2fffea3eee2e0">[email&#160;protected]</span></a></p>
-<p>📱 <a href="tel:+97471021381" style="color:white; text-decoration:none;">+974 7102 1381</a></p>
-<p>📍 <a href="https://www.google.com/maps/search/?api=1&query=Office+70+2nd+Floor+Block+F+Al+Mirqab+Al+Jadeed+St+Doha+Qatar" target="_blank" style="color:white; text-decoration:none;">Office 70, 2nd Floor Block F, Al Mirqab Al Jadeed St, Doha, Qatar</a></p>
-</div>
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <p>
-                    <a href="https://www.instagram.com/omogbackup?igsh=d3djYTNzZ3R1bGNh" target="_blank" style="color:white; text-decoration:none;">Instagram</a><br>
-                    <a href="https://wa.me/97471021381" target="_blank" style="color:white; text-decoration:none;">WhatsApp</a>
-                </p>
-            </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 OMO G Trading And Interior Decoration<br>CR No: 235664 • Doha, Qatar</p>
         </div>
     </footer>
+
+    <a href="https://wa.me/97471021381" class="floating-whatsapp" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 28px; height: 28px; fill: white;">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
