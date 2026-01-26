@@ -91,7 +91,7 @@
 <body>
 <header id="header">
 <nav>
-<div class="logo-container">
+<a href="index.html" class="logo-container" style="text-decoration: none; color: inherit;">
 <div class="logo-icon">
 <img src="logo.png" alt="OMO G Logo" style="width: 100px; height: 100px; object-fit: contain;">
 </div>
@@ -100,11 +100,7 @@
 <p>And Trading • Qatar</p>
 </div>
 </div>
-<button class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
-<span class="hamburger-icon">☰</span>
-<span class="close-icon">✕</span>
-</button>
-<ul id="navMenu">
+<ul>
 <li><a href="index.html" class="active">Home</a></li>
 <li><a href="about.html">About Us</a></li>
 <li><a href="services.html">Services</a></li>
@@ -253,7 +249,7 @@
 </div>
 <div class="footer-section">
 <h3>Contact Info</h3>
-<p>📧 <a href="/cdn-cgi/l/email-protection#31585f575e715e5c5e56585f455443585e43421f525e5c" style="color:white; text-decoration:none;"><span class="__cf_email__" data-cfemail="264f48404966494b49414f485243544f4954550845494b">[email&#160;protected]</span></a></p>
+<p>📧 <a href="/cdn-cgi/l/email-protection#f79e999198b7989a98909e998392859e988584d994989a" style="color:white; text-decoration:none;"><span class="__cf_email__" data-cfemail="01686f676e416e6c6e66686f756473686e73722f626e6c">[email&#160;protected]</span></a></p>
 <p>📱 <a href="tel:+97471021381" style="color:white; text-decoration:none;">+974 7102 1381</a></p>
 <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=Office+70+2nd+Floor+Block+F+Al+Mirqab+Al+Jadeed+St+Doha+Qatar" target="_blank" style="color:white; text-decoration:none;">Office 70, 2nd Floor Block F, Al Mirqab Al Jadeed St, Doha, Qatar</a></p>
 </div>
@@ -331,12 +327,19 @@ update();
 const observer = new IntersectionObserver(
   (entries, observer) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting && !entry.target.classList.contains('counter-done')) {
-        animateCounter(entry.target);
-        observer.unobserve(entry.target);
+      if (entry.isIntersecting) {
+        const statItem = entry.target;
+        const statValue = statItem.querySelector("h2");
+        animateCounter(statValue);
+        observer.unobserve(statItem);
       }
     });
+  },
+  {
+    threshold: 0.5
   }
 );
-stats.forEach(stat => observer.observe(stat));
+
+// Observe each stat item
+document.querySelectorAll('.stat-item').forEach(item => observer.observe(item));
 });
