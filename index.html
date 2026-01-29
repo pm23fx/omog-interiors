@@ -492,6 +492,26 @@ function googleTranslateElementInit() {
             case 'ur': options[i].text = 'Urdu'; break;
           }
         }
+        
+        // PERSISTENCE: Restore saved language preference
+        var savedLang = localStorage.getItem('selectedLanguage');
+        var userLang = navigator.language || navigator.userLanguage;
+        
+        // Priority: 1. Saved preference, 2. Auto-detect Arabic, 3. Default English
+        if (savedLang && savedLang !== 'en') {
+          select.value = savedLang;
+          select.dispatchEvent(new Event('change'));
+        } else if (userLang.startsWith('ar') && !savedLang) {
+          select.value = 'ar';
+          select.dispatchEvent(new Event('change'));
+          localStorage.setItem('selectedLanguage', 'ar');
+        }
+        
+        // PERSISTENCE: Save language choice when user changes it
+        select.addEventListener('change', function() {
+          localStorage.setItem('selectedLanguage', this.value);
+        });
+        
         clearInterval(checkDropdown);
     }
   }, 100);
