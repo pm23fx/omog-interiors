@@ -163,6 +163,22 @@
             to { transform: rotate(360deg); }
         }
 
+        /* Google Translate Specific Styling for Form Page */
+        #google_translate_element {
+            text-align: center;
+            padding: 15px 0;
+            background: #f9f9f9;
+            border-bottom: 1px solid #eee;
+        }
+        .goog-te-gadget { font-family: inherit !important; }
+        .goog-te-combo {
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        .goog-te-banner-frame.skiptranslate { display: none !important; }
+        body { top: 0px !important; }
+
         @media (max-width: 768px) {
             .container {
                 margin: 20px auto;
@@ -180,6 +196,8 @@
 </head>
 <body>
     <div class="container">
+        <div id="google_translate_element"></div>
+
         <div class="header">
             <h1>Book Your Consultation</h1>
             <p>Transform Your Space with OMO G Interior Decoration</p>
@@ -189,7 +207,6 @@
             <div id="message" class="message"></div>
 
             <form id="bookingForm" action="https://formspree.io/f/mreqlvek" method="POST">
-                <!-- Hidden fields for email subject and confirmation -->
                 <input type="hidden" name="_subject" value="New Booking Request from OMO G Website">
                 <input type="hidden" name="_cc" value="info@omoginteriors.com">
                 <input type="hidden" name="_next" value="https://omoginteriors.com/booking-success.html">
@@ -248,7 +265,6 @@
                     <textarea id="projectDetails" name="message" required placeholder="Tell us about your project, space dimensions, style preferences, and any specific requirements..."></textarea>
                 </div>
 
-                <!-- Google reCAPTCHA -->
                 <div class="form-group" style="display: flex; justify-content: center;">
                     <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
                 </div>
@@ -259,6 +275,38 @@
             </form>
         </div>
     </div>
+
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'ar,en,fr,hi,ur,es', 
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+      
+      var checkDropdown = setInterval(function() {
+        var select = document.querySelector('.goog-te-combo');
+        if (select) {
+            var options = select.options;
+            for (var i = 0; i < options.length; i++) {
+              var value = options[i].value;
+              switch(value) {
+                case '':   options[i].text = 'Select Language'; break;
+                case 'ar': options[i].text = 'Arabic'; break;
+                case 'en': options[i].text = 'English'; break;
+                case 'es': options[i].text = 'Spanish'; break;
+                case 'fr': options[i].text = 'French'; break;
+                case 'hi': options[i].text = 'Hindi'; break;
+                case 'ur': options[i].text = 'Urdu'; break;
+              }
+            }
+            clearInterval(checkDropdown);
+        }
+      }, 100);
+    }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit&hl=en"></script>
 
     <script>
         // Set minimum date to today
