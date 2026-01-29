@@ -3438,7 +3438,7 @@ footer {
         top: 100%;
         left: 0;
         right: 0;
-        background: linear-gradient(to right, rgba(139, 21, 56, 0.30), transparent) !important;
+        background: linear-gradient(to right, rgba(139, 21, 56, 0.85), transparent) !important;
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         padding: 20px;
@@ -3497,6 +3497,68 @@ footer {
     nav {
         width: 100%;
         position: relative;
+    }
+}
+/* ========================================
+   MOBILE NAVIGATION CONTRAST IMPROVEMENTS
+   ======================================== */
+
+/* Mobile Navigation Menu - Improved Contrast */
+@media (max-width: 768px) {
+    /* Lighter background for better contrast */
+    nav ul {
+        background: linear-gradient(to right, rgba(249, 243, 244, 0.98), rgba(255, 255, 255, 0.98)) !important;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+    
+    /* Dark maroon text for all navigation links */
+    nav ul li a {
+        color: #6d1f1f !important;
+        font-weight: 600 !important;
+        text-shadow: none !important;
+    }
+    
+    /* Hover state for menu items */
+    nav ul li a:hover {
+        color: #8B0000 !important;
+        background: rgba(139, 0, 0, 0.08) !important;
+    }
+    
+    /* Active/current page indicator */
+    nav ul li a.active {
+        color: #8B0000 !important;
+        background: rgba(139, 0, 0, 0.05) !important;
+    }
+    
+    /* Book Now button - maintain visibility */
+    nav ul li a.cta-nav {
+        background: #8B0000 !important;
+        color: #ffffff !important;
+        border: 2px solid #8B0000 !important;
+        margin: 10px 0 !important;
+        text-align: center !important;
+        border-radius: 25px !important;
+    }
+    
+    nav ul li a.cta-nav:hover {
+        background: #6d1f1f !important;
+        color: #ffffff !important;
+    }
+    
+    /* Close button (X) - ensure visibility */
+    .mobile-menu-toggle {
+        color: #6d1f1f !important;
+        text-shadow: none !important;
+    }
+    
+    .mobile-menu-toggle.active {
+        color: #8B0000 !important;
+    }
+    
+    /* Border color adjustment */
+    nav ul li {
+        border-bottom: 1px solid rgba(139, 21, 56, 0.15) !important;
     }
 }
 
