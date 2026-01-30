@@ -1838,7 +1838,33 @@ footer {
         display: flex !important;
     }
     
-    /* Mobile navigation items - styles moved to contrast improvements section below */
+    /* Mobile navigation items */
+    nav ul li {
+        width: 100%;
+        text-align: left;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+    
+    nav ul li a {
+        display: block;
+        padding: 15px 20px;
+        width: 100%;
+        transition: all 0.3s ease;
+        background: none !important;
+        margin-bottom: 0;
+        border-radius: 0;
+        color: white !important;
+        font-weight: 600;
+    }
+    
+    nav ul li a:hover {
+        background: rgba(255, 255, 255, 0.1) !important;
+        transform: none;
+    }
     
     /* Adjust header layout for mobile */
     header {
@@ -1888,26 +1914,8 @@ nav ul {
         -webkit-backdrop-filter: blur(10px);
     }
     
-    /* Mobile navigation items layout */
-    nav ul li {
-        width: 100%;
-        text-align: left;
-        border-bottom: 1px solid rgba(139, 21, 56, 0.15) !important;
-    }
-    
-    nav ul li:last-child {
-        border-bottom: none;
-    }
-    
     /* Dark maroon text for all navigation links */
     nav ul li a {
-        display: block;
-        padding: 15px 20px;
-        width: 100%;
-        transition: all 0.3s ease;
-        background: none !important;
-        margin-bottom: 0;
-        border-radius: 0;
         color: #6d1f1f !important;
         font-weight: 600 !important;
         text-shadow: none !important;
@@ -1917,7 +1925,6 @@ nav ul {
     nav ul li a:hover {
         color: #8B0000 !important;
         background: rgba(139, 0, 0, 0.08) !important;
-        transform: none;
     }
     
     /* Active/current page indicator */
@@ -1949,5 +1956,10 @@ nav ul {
     
     .mobile-menu-toggle.active {
         color: #8B0000 !important;
+    }
+    
+    /* Border color adjustment */
+    nav ul li {
+        border-bottom: 1px solid rgba(139, 21, 56, 0.15) !important;
     }
 }
