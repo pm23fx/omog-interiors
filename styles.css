@@ -1965,7 +1965,7 @@ nav ul {
 }
 
 /* ========================================
-   IPAD & DARK MODE FIXES - FINAL VERSION
+   IPAD & DARK MODE FIXES - COMPLETE SOLUTION
    ======================================== */
 
 /* 1. FIX: Prevent dark mode extensions from hiding background images on ALL pages */
@@ -2008,6 +2008,49 @@ html[style*="filter"] .page-header {
         color-scheme: only light !important;
         forced-color-adjust: none !important;
     }
+}
+
+/* CRITICAL: Force background images to ALWAYS be visible - strongest override */
+.hero::after,
+.page-header::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background-image: inherit !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    z-index: 0 !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* Ensure content stays above background */
+.hero-content,
+.page-header-content {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* Force specific background image for page-header if dark mode hides it */
+.page-header {
+    position: relative !important;
+}
+
+.page-header::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600') center/cover !important;
+    opacity: 0.3 !important;
+    z-index: 0 !important;
+    filter: none !important;
 }
 
 /* 2. FIX: iPad Portrait - Show MORE sofa/floor, LESS chandelier/ceiling */
