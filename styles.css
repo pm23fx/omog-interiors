@@ -2010,11 +2010,12 @@ html[style*="filter"] .page-header {
     }
 }
 
-/* 2. FIX: iPad Portrait - Show living room instead of ceiling */
+/* 2. FIX: iPad Portrait - Show MORE sofa/floor, LESS chandelier/ceiling */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
     .hero {
-        background-position: center bottom !important;
+        background-position: center 65% !important;
         background-size: cover !important;
+        background-attachment: scroll !important;
     }
 
     /* Navigation already fixed - keep this */
@@ -2035,11 +2036,12 @@ html[style*="filter"] .page-header {
     }
 }
 
-/* 3. FIX: iPad Landscape - Show living room instead of ceiling */
+/* 3. FIX: iPad Landscape - Show MORE sofa/floor, LESS chandelier/ceiling */
 @media (min-width: 768px) and (max-width: 1366px) and (orientation: landscape) {
     .hero {
-        background-position: center 80% !important;
+        background-position: center 60% !important;
         background-size: cover !important;
+        background-attachment: scroll !important;
     }
 }
 
