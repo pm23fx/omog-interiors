@@ -1965,7 +1965,7 @@ nav ul {
 }
 
 /* ========================================
-   IPAD & DARK MODE FIXES - COMPLETE SOLUTION
+   IPAD & DARK MODE FIXES - CORRECTED VERSION
    ======================================== */
 
 /* 1. FIX: Prevent dark mode extensions from hiding background images on ALL pages */
@@ -2010,32 +2010,7 @@ html[style*="filter"] .page-header {
     }
 }
 
-/* CRITICAL: Force background images to ALWAYS be visible - strongest override */
-.hero::after,
-.page-header::after {
-    content: '' !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    background-image: inherit !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    z-index: 0 !important;
-    opacity: 1 !important;
-    filter: none !important;
-}
-
-/* Ensure content stays above background */
-.hero-content,
-.page-header-content {
-    position: relative !important;
-    z-index: 1 !important;
-}
-
-/* Force specific background image for page-header if dark mode hides it */
+/* CRITICAL: Force background images ONLY for OTHER PAGES (not home) */
 .page-header {
     position: relative !important;
 }
@@ -2047,10 +2022,39 @@ html[style*="filter"] .page-header {
     left: 0 !important;
     right: 0 !important;
     bottom: 0 !important;
-    background: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600') center/cover !important;
-    opacity: 0.3 !important;
+    background: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600') center/cover no-repeat !important;
+    opacity: 1 !important;
     z-index: 0 !important;
     filter: none !important;
+    -webkit-filter: none !important;
+}
+
+.page-header::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: linear-gradient(135deg, rgba(139, 21, 56, 0.95) 0%, rgba(201, 160, 99, 0.9) 100%) !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+}
+
+/* Ensure content stays above background for OTHER PAGES */
+.page-header-content {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* Keep HOME PAGE clean - no pseudo-elements */
+.hero {
+    position: relative !important;
+}
+
+.hero-content {
+    position: relative !important;
+    z-index: 2 !important;
 }
 
 /* 2. FIX: iPad Portrait - Show MORE sofa/floor, LESS chandelier/ceiling */
