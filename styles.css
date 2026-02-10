@@ -2011,7 +2011,7 @@ html[style*="color-scheme: dark"] .page-header {
 /* iPad Portrait - Fix HOME page to show full living room image */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
     .hero {
-        background-position: center 55% !important;
+        background-position: center 75% !important;
         background-size: cover !important;
     }
 
@@ -2036,7 +2036,7 @@ html[style*="color-scheme: dark"] .page-header {
 /* iPad Landscape - Fix HOME page to show full living room image */
 @media (min-width: 768px) and (max-width: 1366px) and (orientation: landscape) {
     .hero {
-        background-position: center 50% !important;
+        background-position: center 65% !important;
         background-size: cover !important;
     }
 }
