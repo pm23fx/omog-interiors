@@ -1965,10 +1965,10 @@ nav ul {
 }
 
 /* ========================================
-   IPAD & DARK MODE FIXES - CORRECTED VERSION
+   IPAD & DARK MODE FIXES - FINAL VERSION
    ======================================== */
 
-/* Prevent dark mode from hiding background images */
+/* 1. FIX: Prevent dark mode extensions from hiding background images on ALL pages */
 .hero,
 .page-header {
     color-scheme: only light !important;
@@ -1976,46 +1976,50 @@ nav ul {
     forced-color-adjust: none !important;
 }
 
-/* Protect against dark mode extension filters */
+/* Protect against filter/invert from dark mode extensions */
 .hero,
-.page-header,
+.page-header {
+    filter: none !important;
+    -webkit-filter: none !important;
+}
+
+/* Additional dark mode prevention for various dark mode methods */
+html[data-theme="dark"] .hero,
+html[data-theme="dark"] .page-header,
+html[style*="color-scheme: dark"] .hero,
+html[style*="color-scheme: dark"] .page-header,
+html[style*="filter"] .hero,
+html[style*="filter"] .page-header {
+    opacity: 1 !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+}
+
+/* Prevent dark reader and similar extensions from inverting */
 .hero *,
 .page-header * {
     filter: none !important;
     -webkit-filter: none !important;
 }
 
-/* Additional dark mode prevention - without changing background images */
-html[data-theme="dark"] .hero,
-html[data-theme="dark"] .page-header,
-html[style*="color-scheme: dark"] .hero,
-html[style*="color-scheme: dark"] .page-header {
-    filter: none !important;
-    opacity: 1 !important;
+@media (prefers-color-scheme: dark) {
+    .hero,
+    .page-header {
+        color-scheme: only light !important;
+        forced-color-adjust: none !important;
+    }
 }
 
-/* Force background to always display - prevents dark mode extensions from hiding */
-.hero,
-.page-header {
-    background-color: transparent !important;
-}
-
-.page-header {
-    background-image: linear-gradient(135deg, rgba(139, 21, 56, 0.95) 0%, rgba(201, 160, 99, 0.9) 100%),
-                      url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600') !important;
-    background-position: center !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-}
-
-/* iPad Portrait - Fix HOME page to show full living room image */
+/* 2. FIX: iPad Portrait - Show COMPLETE image without cropping */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
     .hero {
-        background-position: center 75% !important;
-        background-size: cover !important;
+        background-position: center center !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        background-color: var(--dark-color) !important;
     }
 
-    /* Fix navigation menu - prevent "Contact" from being cut off */
+    /* Navigation already fixed - keep this */
     nav ul {
         gap: 1rem !important;
         flex-wrap: wrap !important;
@@ -2033,11 +2037,22 @@ html[style*="color-scheme: dark"] .page-header {
     }
 }
 
-/* iPad Landscape - Fix HOME page to show full living room image */
+/* 3. FIX: iPad Landscape - Show COMPLETE image without cropping */
 @media (min-width: 768px) and (max-width: 1366px) and (orientation: landscape) {
     .hero {
-        background-position: center 65% !important;
+        background-position: center center !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        background-color: var(--dark-color) !important;
+    }
+}
+
+/* 4. ADDITIONAL: Ensure backgrounds work on all iPad orientations for other pages */
+@media (min-width: 768px) and (max-width: 1366px) {
+    .page-header {
+        background-position: center !important;
         background-size: cover !important;
+        background-attachment: scroll !important;
     }
 }
 
@@ -2050,14 +2065,5 @@ html[style*="color-scheme: dark"] .page-header {
 
     .page-header-content {
         padding: 2rem 1rem !important;
-    }
-}
-
-/* Prevent dark mode in prefers-color-scheme */
-@media (prefers-color-scheme: dark) {
-    .hero,
-    .page-header {
-        color-scheme: only light !important;
-        forced-color-adjust: none !important;
     }
 }
