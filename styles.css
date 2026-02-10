@@ -2010,13 +2010,11 @@ html[style*="filter"] .page-header {
     }
 }
 
-/* 2. FIX: iPad Portrait - Show COMPLETE image without cropping */
+/* 2. FIX: iPad Portrait - Show living room instead of ceiling */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
     .hero {
-        background-position: center center !important;
-        background-size: contain !important;
-        background-repeat: no-repeat !important;
-        background-color: var(--dark-color) !important;
+        background-position: center bottom !important;
+        background-size: cover !important;
     }
 
     /* Navigation already fixed - keep this */
@@ -2037,13 +2035,11 @@ html[style*="filter"] .page-header {
     }
 }
 
-/* 3. FIX: iPad Landscape - Show COMPLETE image without cropping */
+/* 3. FIX: iPad Landscape - Show living room instead of ceiling */
 @media (min-width: 768px) and (max-width: 1366px) and (orientation: landscape) {
     .hero {
-        background-position: center center !important;
-        background-size: contain !important;
-        background-repeat: no-repeat !important;
-        background-color: var(--dark-color) !important;
+        background-position: center 80% !important;
+        background-size: cover !important;
     }
 }
 
