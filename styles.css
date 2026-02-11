@@ -2112,3 +2112,34 @@ html[style*="filter"] .page-header {
         padding: 2rem 1rem !important;
     }
 }
+
+/* ========================================
+   DARK MODE - STRONGER TEXT SHADOW ONLY
+   ======================================== */
+
+/* Stronger shadow for white text in dark mode (no color change) */
+@media (prefers-color-scheme: dark) {
+    .hero h1,
+    .hero p,
+    .hero-content h1,
+    .hero-content p,
+    .page-header h1,
+    .page-header p,
+    .page-header-content h1,
+    .page-header-content p {
+        text-shadow: 0 3px 10px rgba(0, 0, 0, 0.9),
+                     0 0 30px rgba(0, 0, 0, 0.7) !important;
+    }
+}
+
+html[data-theme="dark"] .hero h1,
+html[data-theme="dark"] .hero p,
+html[data-theme="dark"] .hero-content h1,
+html[data-theme="dark"] .hero-content p,
+html[data-theme="dark"] .page-header h1,
+html[data-theme="dark"] .page-header p,
+html[data-theme="dark"] .page-header-content h1,
+html[data-theme="dark"] .page-header-content p {
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.9),
+                 0 0 30px rgba(0, 0, 0, 0.7) !important;
+}
