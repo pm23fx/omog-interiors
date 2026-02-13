@@ -4,6 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Consultation - OMO G Trading And Interior Decoration</title>
+<meta name="description" content="Submit your OMO G consultation request through our online form for interior design and renovation projects in Qatar.">
+<link rel="canonical" href="https://omoginteriors.com/booking-form-formspree.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Online Booking Form | OMO G">
+<meta property="og:description" content="Submit your OMO G consultation request through our online form for interior design and renovation projects in Qatar.">
+<meta property="og:url" content="https://omoginteriors.com/booking-form-formspree.html">
+<meta property="og:image" content="https://omoginteriors.com/logo.png">
+<script type="application/ld+json">
+{
+  "": "https://schema.org",
+  "": "LocalBusiness",
+  "name": "OMO G Trading And Interior Decoration",
+  "url": "https://omoginteriors.com",
+  "image": "https://omoginteriors.com/logo.png",
+  "telephone": "+97471021381",
+  "email": "info.com",
+  "address": {
+    "": "PostalAddress",
+    "streetAddress": "Office 70, 2nd Floor Block E, Al Mirqab Mall",
+    "addressLocality": "Doha",
+    "addressCountry": "QA"
+  },
+  "sameAs": [
+    "https://www.instagram.com/omogdecor"
+  ]
+}
+</script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -327,6 +354,21 @@
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit&hl=en"></script>
 
     <script>
+        function trackEvent(eventName, params = {}) {
+            try {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    event: eventName,
+                    ...params
+                });
+                if (typeof window.gtag === 'function') {
+                    window.gtag('event', eventName, params);
+                }
+            } catch (e) {
+                // Keep UX stable even if analytics is unavailable
+            }
+        }
+
         // Set minimum date to today
         const dateInput = document.getElementById('date');
         const today = new Date().toISOString().split('T')[0];
@@ -338,6 +380,10 @@
 
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
+            trackEvent('form_submit', {
+                page_path: window.location.pathname,
+                form_id: 'bookingForm'
+            });
             
             // Show loading state
             submitBtn.disabled = true;
@@ -358,12 +404,18 @@
                 });
                 
                 if (response.ok) {
+                    trackEvent('booking_submit_success', {
+                        page_path: window.location.pathname
+                    });
                     // Redirect to success page
                     window.location.href = 'booking-success.html';
                 } else {
                     throw new Error('Form submission failed');
                 }
             } catch (error) {
+                trackEvent('booking_submit_error', {
+                    page_path: window.location.pathname
+                });
                 // Show error message
                 messageDiv.className = 'message error';
                 messageDiv.textContent = 'Sorry, there was an error sending your request. Please try again or contact us directly at bookings@omoginteriors.com';
