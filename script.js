@@ -6,6 +6,23 @@ function toggleMenu() {
     menuToggle.classList.toggle('active');
 }
 
+// Lightweight analytics helper (works with or without gtag)
+function trackEvent(eventName, params = {}) {
+    try {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: eventName,
+            ...params
+        });
+
+        if (typeof window.gtag === 'function') {
+            window.gtag('event', eventName, params);
+        }
+    } catch (e) {
+        // No-op to avoid breaking UX if tracking is unavailable
+    }
+}
+
 // Close menu when clicking outside
 document.addEventListener('click', function(event) {
     const nav = document.querySelector('nav');
@@ -34,6 +51,54 @@ document.addEventListener('DOMContentLoaded', function() {
             if (menuToggle) {
                 menuToggle.classList.remove('active');
             }
+        });
+    });
+
+    trackEvent('page_view', {
+        page_path: window.location.pathname,
+        page_title: document.title
+    });
+});
+
+// Global CTA + WhatsApp click tracking
+document.addEventListener('click', function (event) {
+    const target = event.target.closest('a,button');
+    if (!target) return;
+
+    const href = target.getAttribute('href') || '';
+    const text = (target.textContent || '').trim().toLowerCase();
+
+    if (href.includes('wa.me')) {
+        trackEvent('whatsapp_click', {
+            page_path: window.location.pathname,
+            cta_text: target.textContent.trim()
+        });
+        return;
+    }
+
+    if (
+        href.includes('booking.html') ||
+        href === '/booking' ||
+        href.startsWith('/booking?') ||
+        href.startsWith('/booking#') ||
+        text.includes('book free consultation') ||
+        text.includes('schedule a consultation')
+    ) {
+        trackEvent('book_cta_click', {
+            page_path: window.location.pathname,
+            cta_text: target.textContent.trim()
+        });
+    }
+});
+
+// Form submission tracking
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('form').forEach(form => {
+        form.addEventListener('submit', function () {
+            trackEvent('form_submit', {
+                page_path: window.location.pathname,
+                form_id: form.id || 'unknown_form'
+            });
         });
     });
 });
@@ -111,6 +176,11 @@ function openLightbox(element) {
     currentLightboxIndex = portfolioItems.indexOf(element);
     lightbox.style.display = 'flex';
     document.body.style.overflow = 'hidden';
+
+    trackEvent('portfolio_lightbox_open', {
+        page_path: window.location.pathname,
+        item_title: title
+    });
 }
 
 function closeLightbox() {
