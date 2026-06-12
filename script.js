@@ -6,8 +6,6 @@ function toggleMenu() {
     menuToggle.classList.toggle('active');
 }
 
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
 // Lightweight analytics helper (works with or without gtag)
 function trackEvent(eventName, params = {}) {
     try {
@@ -108,7 +106,6 @@ document.addEventListener('DOMContentLoaded', function () {
 // Header scroll effect
 window.addEventListener('scroll', function() {
     const header = document.getElementById('header');
-    if (!header) return;
     if (window.scrollY > 50) {
         header.classList.add('scrolled');
     } else {
@@ -139,181 +136,23 @@ const observerOptions = {
 const observer = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
         }
     });
 }, observerOptions);
 
-// Premium motion, counters, and gallery controls
+// Observe all service cards and portfolio items
 document.addEventListener('DOMContentLoaded', function() {
-    document.body.classList.add('page-ready');
-
-    document.querySelectorAll('img').forEach((img) => {
-        if (!img.hasAttribute('decoding')) img.setAttribute('decoding', 'async');
-        if (!img.closest('.hero') && !img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+    const animatedElements = document.querySelectorAll('.service-card, .portfolio-item, .value-card, .process-step, .why-item');
+    
+    animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
     });
-
-    const animatedElements = document.querySelectorAll([
-        '.section-header',
-        '.service-card',
-        '.portfolio-item',
-        '.value-card',
-        '.process-step',
-        '.why-item',
-        '.contact-card',
-        '.booking-card',
-        '.consultation-step',
-        '.consultation-type-card',
-        '.preparation-card',
-        '.category-card',
-        '.testimonial-card',
-        '.ceo-content',
-        '.about-content',
-        '.location-card',
-        '.faq-item'
-    ].join(','));
-
-    animatedElements.forEach((el, index) => {
-        el.classList.add('reveal');
-        el.style.transitionDelay = `${Math.min(index % 6, 5) * 70}ms`;
-        if (prefersReducedMotion) {
-            el.classList.add('is-visible');
-        } else {
-            observer.observe(el);
-        }
-    });
-
-    initCounters();
-    initPortfolioFilters();
-    initParallax();
 });
-
-function initCounters() {
-    const counters = document.querySelectorAll('.stat-item h2');
-    if (!counters.length) return;
-
-    const runCounter = (counter) => {
-        if (counter.dataset.counted === 'true') return;
-        counter.dataset.counted = 'true';
-
-        const original = counter.textContent.trim();
-        const match = original.match(/(\d+)/);
-        if (!match || prefersReducedMotion) {
-            counter.classList.add('counter-done');
-            return;
-        }
-
-        const target = Number(match[1]);
-        const suffix = original.replace(match[1], '');
-        const duration = 1200;
-        const start = performance.now();
-
-        const tick = (now) => {
-            const progress = Math.min((now - start) / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            counter.textContent = `${Math.round(target * eased)}${suffix}`;
-
-            if (progress < 1) {
-                requestAnimationFrame(tick);
-            } else {
-                counter.textContent = original;
-                counter.classList.add('counter-done');
-            }
-        };
-
-        requestAnimationFrame(tick);
-    };
-
-    const counterObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                runCounter(entry.target);
-                counterObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.45 });
-
-    counters.forEach((counter) => counterObserver.observe(counter));
-}
-
-function detectPortfolioCategory(item) {
-    const text = `${item.textContent} ${item.querySelector('img')?.alt || ''}`.toLowerCase();
-    if (item.classList.contains('instagram-item')) return 'featured';
-    if (text.includes('kitchen') || text.includes('dining')) return 'kitchen';
-    if (text.includes('bedroom') || text.includes('suite') || text.includes('wardrobe')) return 'bedroom';
-    if (text.includes('office') || text.includes('commercial')) return 'commercial';
-    if (text.includes('bathroom') || text.includes('spa')) return 'bathroom';
-    return 'living';
-}
-
-function initPortfolioFilters() {
-    const grid = document.querySelector('.portfolio-grid');
-    if (!grid || grid.dataset.filtersReady === 'true') return;
-
-    const items = Array.from(grid.querySelectorAll('.portfolio-item'));
-    if (items.length < 6) return;
-
-    const categories = [
-        ['all', 'All Projects'],
-        ['living', 'Living'],
-        ['bedroom', 'Bedrooms'],
-        ['kitchen', 'Kitchen & Dining'],
-        ['bathroom', 'Bathrooms'],
-        ['commercial', 'Commercial'],
-        ['featured', 'Instagram']
-    ];
-
-    items.forEach((item) => {
-        item.dataset.category = item.dataset.category || detectPortfolioCategory(item);
-    });
-
-    const bar = document.createElement('div');
-    bar.className = 'portfolio-filter-bar';
-    bar.setAttribute('aria-label', 'Filter portfolio projects');
-
-    categories.forEach(([id, label], index) => {
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.className = `portfolio-filter-btn${index === 0 ? ' is-active' : ''}`;
-        button.textContent = label;
-        button.dataset.filter = id;
-        button.addEventListener('click', () => {
-            bar.querySelectorAll('.portfolio-filter-btn').forEach((btn) => btn.classList.remove('is-active'));
-            button.classList.add('is-active');
-
-            items.forEach((item) => {
-                const show = id === 'all' || item.dataset.category === id;
-                item.classList.toggle('is-hidden', !show);
-            });
-
-            trackEvent('portfolio_filter_click', {
-                page_path: window.location.pathname,
-                filter: id
-            });
-        });
-        bar.appendChild(button);
-    });
-
-    grid.parentNode.insertBefore(bar, grid);
-    grid.dataset.filtersReady = 'true';
-}
-
-function initParallax() {
-    const hero = document.querySelector('.hero');
-    if (!hero || prefersReducedMotion) return;
-
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-        if (ticking) return;
-        ticking = true;
-        requestAnimationFrame(() => {
-            const offset = Math.min(window.scrollY * 0.12, 80);
-            hero.style.backgroundPosition = `center calc(50% + ${offset}px)`;
-            ticking = false;
-        });
-    }, { passive: true });
-}
 
 /* =============================
    PORTFOLIO LIGHTBOX SYSTEM
