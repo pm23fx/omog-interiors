@@ -127,20 +127,6 @@
         body {
             top: 0px !important;
         }
-        /* Multi-image badge on portfolio cards */
-        .portfolio-item { position: relative; }
-        .img-count-badge {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: rgba(0,0,0,0.55);
-            color: #fff;
-            font-size: 0.75rem;
-            padding: 3px 8px;
-            border-radius: 20px;
-            pointer-events: none;
-            z-index: 5;
-        }
     </style>
 </head>
 <body>
@@ -190,47 +176,26 @@
             <p>Explore our collection of beautifully designed spaces</p>
         </div>
         <div class="portfolio-grid">
-            <!-- ADD MORE: data-images="/luxury-living1.jpg,/luxury-living2.jpg" -->
-            <div class="portfolio-item" onclick="openLightbox(this)" data-images="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800" alt="Living Room"><div class="portfolio-overlay"><h3>Luxury Living Room</h3><p>Sophisticated neutral palette</p></div></div>
-            <!-- ADD MORE: data-images="/bedroom.jpg,/bedroom2.jpg,/bedroom3.jpg" -->
-            <div class="portfolio-item" onclick="openLightbox(this)" data-images="/bedroom.jpg"><img src="/bedroom.jpg" alt="Bedroom"><div class="portfolio-overlay"><h3>Plush Bedroom</h3><p>Cozy and elegant design</p></div></div>
-            <!-- ADD MORE: add filenames after /comtemp.PNG separated by commas, update badge count -->
-            <div class="portfolio-item" onclick="openLightbox(this)" data-images="/contemp.jpg"><img src="/contemp.jpg /comtemp2" alt="Contemporary Suite"><div class="portfolio-overlay"><h3>Contemporary Bedroom Suite</h3><p>Bespoke furnishings</p></div><span class="img-count-badge">📷 3</span></div>
-            <!-- ADD MORE: data-images="/livingroom.jpg,/livingroom2.jpg" -->
-            <div class="portfolio-item" onclick="openLightbox(this)" data-images="/livingroom.jpg"><img src="/livingroom.jpg" alt="Plush Livingroom"><div class="portfolio-overlay"><h3>Plush Livingroom Interior</h3><p>Rich textures and elegant furnishings</p></div></div>
-            <!-- ADD MORE: data-images="[current],/kitchen2.jpg,/kitchen3.jpg" -->
-            <div class="portfolio-item" onclick="openLightbox(this)" data-images="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=800"><img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=800" alt="Gourmet Kitchen"><div class="portfolio-overlay"><h3>Modern Gourmet Kitchen</h3><p>Marble countertops</p></div></div>
-            <!-- ADD MORE: data-images="/dining.jpg,/dining2.jpg" -->
-            <div class="portfolio-item" onclick="openLightbox(this)" data-images="/dining.jpg"><img src="/dining.jpg" alt="Dining Interior"><div class="portfolio-overlay"><h3>Exquisite Dining Interior</h3><p>Luxurious finishes</p></div></div>
-            <!-- ADD MORE: data-images="[current],/minimalist2.jpg" -->
-            <div class="portfolio-item" onclick="openLightbox(this)" data-images="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=800"><img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=800" alt="Minimalist Space"><div class="portfolio-overlay"><h3>Minimalist Living Space</h3><p>Clean lines and curated furnishings</p></div></div>
-            <!-- ADD MORE: data-images="/master.jpg,/master2.jpg,/master3.jpg" -->
-            <div class="portfolio-item" onclick="openLightbox(this)" data-images="/master.jpg"><img src="/master.jpg" alt="Master Retreat"><div class="portfolio-overlay"><h3>Master Bedroom Retreat</h3><p>Serene sanctuary</p></div></div>
-            <!-- ADD MORE: data-images="[current],/elegant-dining2.jpg" -->
-            <div class="portfolio-item" onclick="openLightbox(this)" data-images="https://images.unsplash.com/photo-1615529182904-14819c35db37?w=800"><img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?w=800" alt="Elegant Dining"><div class="portfolio-overlay"><h3>Elegant Dining Room</h3><p>Designer furniture</p></div></div>
-            <!-- ADD MORE: data-images="[current],/office2.jpg" -->
-            <div class="portfolio-item" onclick="openLightbox(this)" data-images="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800" alt="Home Office"><div class="portfolio-overlay"><h3>Executive Home Office</h3><p>Professional workspace</p></div></div>
-            <!-- ADD MORE: data-images="[current],/bathroom2.jpg,/bathroom3.jpg" -->
-            <div class="portfolio-item" onclick="openLightbox(this)" data-images="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=800"><img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=800" alt="Spa Bathroom"><div class="portfolio-overlay"><h3>Luxury Spa Bathroom</h3><p>Marble and mood lighting</p></div></div>
-            <!-- ADD MORE: data-images="[current],/lounge2.jpg" -->
-            <div class="portfolio-item" onclick="openLightbox(this)" data-images="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800"><img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800" alt="Modern Lounge"><div class="portfolio-overlay"><h3>Modern Lounge Area</h3><p>Comfortable seating</p></div></div>
-            <!-- ADD MORE: data-images="[current],/penthouse2.jpg" -->
-            <div class="portfolio-item" onclick="openLightbox(this)" data-images="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800" alt="Penthouse"><div class="portfolio-overlay"><h3>Penthouse Interior</h3><p>High-rise luxury</p></div></div>
-            <!-- ADD MORE: data-images="[current],/kitchen-island2.jpg" -->
-            <div class="portfolio-item" onclick="openLightbox(this)" data-images="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800" alt="Kitchen Island"><div class="portfolio-overlay"><h3>Contemporary Kitchen Island</h3><p>Modern and integrated</p></div></div>
-            <!-- ADD MORE: data-images="[current],/wardrobe2.jpg" -->
-            <div class="portfolio-item" onclick="openLightbox(this)" data-images="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800"><img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800" alt="Wardrobe"><div class="portfolio-overlay"><h3>Luxury Walk-in Wardrobe</h3><p>Custom closet system</p></div></div>
-            <!-- ADD MORE: data-images="[current],/fine-dining2.jpg" -->
-            <div class="portfolio-item" onclick="openLightbox(this)" data-images="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800" alt="Fine Dining"><div class="portfolio-overlay"><h3>Fine Dining Space</h3><p>Upscale environment</p></div></div>
-            <!-- ADD MORE: data-images="[current],/hotel-bed2.jpg" -->
-            <div class="portfolio-item" onclick="openLightbox(this)" data-images="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800"><img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800" alt="Hotel Bedroom"><div class="portfolio-overlay"><h3>Boutique Hotel Style Bedroom</h3><p>Plush textiles</p></div></div>
-            <!-- ADD MORE: data-images="/ibadan2.jpg,/ibadan3.jpg" -->
-            <div class="portfolio-item" onclick="openLightbox(this)" data-images="/ibadan2.jpg"><img src="/ibadan2.jpg" alt="Open Plan"><div class="portfolio-overlay"><h3>Open Plan Living</h3><p>Seamless transitions</p></div></div>
-            <!-- ADD MORE: data-images="[current],/master-suite2.jpg" -->
-            <div class="portfolio-item" onclick="openLightbox(this)" data-images="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800"><img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800" alt="Master Suite"><div class="portfolio-overlay"><h3>Master Suite Retreat</h3><p>Luxurious sanctuary</p></div></div>
-            <!-- ADD MORE: data-images="[current],/designer-living2.jpg" -->
-            <div class="portfolio-item" onclick="openLightbox(this)" data-images="https://images.unsplash.com/photo-1600210491369-e753d80a41f3?w=800"><img src="https://images.unsplash.com/photo-1600210491369-e753d80a41f3?w=800" alt="Designer Living"><div class="portfolio-overlay"><h3>Designer Living Room</h3><p>Curated art pieces</p></div></div>
-            <!-- Instagram items — these open IG directly, no lightbox -->
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800" alt="Living Room"><div class="portfolio-overlay"><h3>Luxury Living Room</h3><p>Sophisticated neutral palette</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="/bedroom.jpg" alt="Bedroom"><div class="portfolio-overlay"><h3>Plush Bedroom</h3><p>Cozy and elegant design</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="/contemp.jpg" alt="Contemporary Suite"><div class="portfolio-overlay"><h3>Contemporary Bedroom Suite</h3><p>Bespoke furnishings</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="/livingroom.jpg" alt="Plush Livingroom"><div class="portfolio-overlay"><h3>Plush Livingroom Interior</h3><p>Rich textures and elegant furnishings</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=800" alt="Gourmet Kitchen"><div class="portfolio-overlay"><h3>Modern Gourmet Kitchen</h3><p>Marble countertops</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="/dining.jpg" alt="Dining Interior"><div class="portfolio-overlay"><h3>Exquisite Dining Interior</h3><p>Luxurious finishes</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=800" alt="Minimalist Space"><div class="portfolio-overlay"><h3>Minimalist Living Space</h3><p>Clean lines and curated furnishings</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="/master.jpg" alt="Master Retreat"><div class="portfolio-overlay"><h3>Master Bedroom Retreat</h3><p>Serene sanctuary</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?w=800" alt="Elegant Dining"><div class="portfolio-overlay"><h3>Elegant Dining Room</h3><p>Designer furniture</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800" alt="Home Office"><div class="portfolio-overlay"><h3>Executive Home Office</h3><p>Professional workspace</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=800" alt="Spa Bathroom"><div class="portfolio-overlay"><h3>Luxury Spa Bathroom</h3><p>Marble and mood lighting</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800" alt="Modern Lounge"><div class="portfolio-overlay"><h3>Modern Lounge Area</h3><p>Comfortable seating</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800" alt="Penthouse"><div class="portfolio-overlay"><h3>Penthouse Interior</h3><p>High-rise luxury</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800" alt="Kitchen Island"><div class="portfolio-overlay"><h3>Contemporary Kitchen Island</h3><p>Modern and integrated</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800" alt="Wardrobe"><div class="portfolio-overlay"><h3>Luxury Walk-in Wardrobe</h3><p>Custom closet system</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800" alt="Fine Dining"><div class="portfolio-overlay"><h3>Fine Dining Space</h3><p>Upscale environment</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800" alt="Hotel Bedroom"><div class="portfolio-overlay"><h3>Boutique Hotel Style Bedroom</h3><p>Plush textiles</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="/ibadan2.jpg" alt="Open Plan"><div class="portfolio-overlay"><h3>Open Plan Living</h3><p>Seamless transitions</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800" alt="Master Suite"><div class="portfolio-overlay"><h3>Master Suite Retreat</h3><p>Luxurious sanctuary</p></div></div>
+            <div class="portfolio-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1600210491369-e753d80a41f3?w=800" alt="Designer Living"><div class="portfolio-overlay"><h3>Designer Living Room</h3><p>Curated art pieces</p></div></div>
             <div class="portfolio-item instagram-item" onclick="window.open('https://www.instagram.com/p/DMKUG0toxku/', '_blank')"><img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800" alt="IG 1"><div class="portfolio-overlay"><h3>Featured IG Project 1</h3><p>Click to view on Instagram</p><span>📷</span></div></div>
             <div class="portfolio-item instagram-item" onclick="window.open('https://www.instagram.com/p/DLhiuEAo3qm/', '_blank')"><img src="/prem.jpg" alt="IG 2"><div class="portfolio-overlay"><h3>Featured IG Project 2</h3><p>Click to view on Instagram</p><span>📷</span></div></div>
             <div class="portfolio-item instagram-item" onclick="window.open('https://www.instagram.com/p/DLZ62ewo2vx/', '_blank')"><img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=800" alt="IG 3"><div class="portfolio-overlay"><h3>Featured IG Project 3</h3><p>Click to view on Instagram</p><span>📷</span></div></div>
@@ -328,15 +293,11 @@
 })();
 </script>
     <div id="lightbox" class="lightbox">
-        <span onclick="closeLightbox()" style="position:absolute; top:20px; right:30px; color:white; font-size:40px; cursor:pointer; z-index:1;">×</span>
-        <!-- Prev / Next arrows -->
-        <button id="lb-prev" onclick="lbNav(-1)" style="position:absolute;left:20px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.15);border:none;color:white;font-size:2.5rem;padding:10px 16px;border-radius:50%;cursor:pointer;display:none;">&#8249;</button>
-        <button id="lb-next" onclick="lbNav(1)"  style="position:absolute;right:20px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.15);border:none;color:white;font-size:2.5rem;padding:10px 16px;border-radius:50%;cursor:pointer;display:none;">&#8250;</button>
-        <img id="lightbox-img" style="max-width:80%; max-height:70%; border:2px solid white; transition: opacity 0.2s;">
+        <span onclick="closeLightbox()" style="position:absolute; top:20px; right:30px; color:white; font-size:40px; cursor:pointer;">×</span>
+        <img id="lightbox-img" style="max-width:80%; max-height:70%; border:2px solid white;">
         <div style="color:white; text-align:center; margin-top:15px;">
             <h3 id="lightbox-title"></h3>
             <p id="lightbox-description"></p>
-            <p id="lb-counter" style="font-size:0.85rem; opacity:0.7; margin-top:4px;"></p>
         </div>
     </div>
     
@@ -395,104 +356,17 @@
             });
             stats.forEach(s => obs.observe(s));
         });
-        // ---- Multi-image Lightbox ----
-        let _lbImages = [];
-        let _lbIndex  = 0;
-        let _lbTitle  = '';
-        let _lbDesc   = '';
-
-        // Show photo-count badges on cards with multiple images at page load
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.portfolio-item:not(.instagram-item)').forEach(function(el) {
-                const attr = el.getAttribute('data-images');
-                if (!attr) return;
-                const imgs = attr.split(',').map(s => s.trim()).filter(Boolean);
-                if (imgs.length > 1) {
-                    let badge = el.querySelector('.img-count-badge');
-                    if (!badge) {
-                        badge = document.createElement('span');
-                        badge.className = 'img-count-badge';
-                        el.appendChild(badge);
-                    }
-                    badge.textContent = '📷 ' + imgs.length;
-                }
-            });
-        });
-
         function openLightbox(el) {
             if (el.classList.contains('instagram-item')) return;
-            const lb     = document.getElementById('lightbox');
-            _lbTitle     = el.querySelector('h3').innerText;
-            _lbDesc      = el.querySelector('p').innerText;
-
-            const multi  = el.getAttribute('data-images');
-            if (multi) {
-                _lbImages = multi.split(',').map(s => s.trim()).filter(Boolean);
-            } else {
-                _lbImages = [ el.querySelector('img').src ];
-            }
-            _lbIndex = 0;
-
-            // Auto-update the badge on the card
-            const badge = el.querySelector('.img-count-badge');
-            if (badge) {
-                badge.textContent = '📷 ' + _lbImages.length;
-            } else if (_lbImages.length > 1) {
-                const b = document.createElement('span');
-                b.className = 'img-count-badge';
-                b.textContent = '📷 ' + _lbImages.length;
-                el.appendChild(b);
-            }
-
-            _renderLightbox();
+            const lb = document.getElementById('lightbox');
+            document.getElementById('lightbox-img').src = el.querySelector('img').src;
+            document.getElementById('lightbox-title').innerText = el.querySelector('h3').innerText;
+            document.getElementById('lightbox-description').innerText = el.querySelector('p').innerText;
             lb.style.display = 'flex';
         }
-
-        function _renderLightbox() {
-            const img     = document.getElementById('lightbox-img');
-            const title   = document.getElementById('lightbox-title');
-            const desc    = document.getElementById('lightbox-description');
-            const counter = document.getElementById('lb-counter');
-            const prev    = document.getElementById('lb-prev');
-            const next    = document.getElementById('lb-next');
-
-            img.style.opacity = '0';
-            setTimeout(() => {
-                img.src = _lbImages[_lbIndex];
-                img.style.opacity = '1';
-            }, 150);
-
-            title.innerText = _lbTitle;
-            desc.innerText  = _lbDesc;
-
-            if (_lbImages.length > 1) {
-                counter.innerText = `Image ${_lbIndex + 1} of ${_lbImages.length}`;
-                prev.style.display = 'block';
-                next.style.display = 'block';
-            } else {
-                counter.innerText = '';
-                prev.style.display = 'none';
-                next.style.display = 'none';
-            }
-        }
-
-        function lbNav(dir) {
-            _lbIndex = (_lbIndex + dir + _lbImages.length) % _lbImages.length;
-            _renderLightbox();
-        }
-
         function closeLightbox() {
             document.getElementById('lightbox').style.display = 'none';
         }
-
-        // Keyboard navigation
-        document.addEventListener('keydown', function(e) {
-            const lb = document.getElementById('lightbox');
-            if (lb.style.display !== 'flex') return;
-            if (e.key === 'ArrowRight') lbNav(1);
-            if (e.key === 'ArrowLeft')  lbNav(-1);
-            if (e.key === 'Escape')     closeLightbox();
-        });
     </script>
 </body>
 </html>
